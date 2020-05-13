@@ -4,5 +4,5 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    #return "hello PD"
-    return render_template("index.html")
+    name = request.args.get("name","PD")
+    return render_template("index.html", name=name)
