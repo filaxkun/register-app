@@ -10,13 +10,14 @@
       <form>
          <input name="name" placeholder="Name" type="text">
          <select name="greeting">
+            <option disabled selected value="">Chose </option>
             <option value="Hello"  >Hello  </option>
             <option value="GoodBye">GoodBye</option>
             <option value="ByeBye" >ByeBye </option>
          </select>
          <input type="submit" value="Submit">
       </form>
-      <h1>hello {{ name }}</h1>
+      <h1>{{ greeting }} {{ name }}</h1>
    </body>
 </html>
 
