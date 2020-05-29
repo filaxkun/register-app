@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
 
@@ -14,9 +14,10 @@ def register():
     activity = request.form.get("activity")
     if not name or not activity:
         return render_template("failure.html")
-    #people.append(f"{name} subbed to {activity}")
-    return render_template("success.html",name=name,activity=activity)
+    people.append(f"{name} subbed to {activity}")
+    #return render_template("success.html",name=name,activity=activity)
+    return redirect("/registrants")
 
 @app.route("/registrants")
 def show_registrants():
-    return render_teamplate("registrants.html",people=people)
+    return render_template("registrants.html",people=people)
