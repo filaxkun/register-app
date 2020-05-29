@@ -1,16 +1,15 @@
 {% extends "layout.html"%}
 
 {% block body %}
-   <h1>Greeting App</h1>
-   <form>
+   <h1>Register App</h1>
+   <form action="/register" method="post">
       <input name="name" placeholder="Name" type="text">
-      <select name="greeting">
+      <select name="activity">
          <option disabled selected value="">Chose </option>
-         <option value="Hello"  >Hello  </option>
-         <option value="GoodBye">GoodBye</option>
-         <option value="ByeBye" >ByeBye </option>
+         <option value="wushu"    >Wushu   </option>
+         <option value="bjj"      >BJJ     </option>
+         <option value="strenght" >Strenght</option>
       </select>
       <input type="submit" value="Submit">
    </form>
-   <h1>{{ greeting }} {{ name }}</h1>
 {% endblock %}
